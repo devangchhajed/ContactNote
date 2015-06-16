@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/contact_portrait"
+        android:layout_width="100dip"
+        android:layout_height="100dip"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/contact_name"
+        android:layout_marginRight="20dp"
+        android:adjustViewBounds="true"
+        android:background="#aaa" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/noteText"
+        android:hint="Note"
+        android:minLines="10"
+        android:nestedScrollingEnabled="true"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/noteit"
+        android:onClick="saveNote"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Note It"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <TextView
+            android:id="@+id/contact_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Sam"
+            android:textSize="40dip"
+            android:layout_toLeftOf="@+id/contact_portrait"
+            android:layout_toStartOf="@+id/contact_portrait" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Open Contact"
+            android:id="@+id/openContact"
+            android:layout_below="@+id/contact_name"
+            android:layout_alignLeft="@+id/contact_name"
+            android:layout_alignStart="@+id/contact_name"
+            android:onClick="openContact"
+     />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Call"
+            android:id="@+id/callcontact"
+            android:onClick="callContact"
+            android:layout_above="@+id/noteText"
+            android:layout_alignLeft="@+id/openContact"
+            android:layout_alignStart="@+id/openContact"
+            android:layout_alignRight="@+id/openContact"
+            android:layout_alignEnd="@+id/openContact" />
+
+    </LinearLayout>
+
+</RelativeLayout>
